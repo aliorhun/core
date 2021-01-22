@@ -54,8 +54,8 @@ function read_file_as_text(file, callback, decoder) {
     }
 }
 
-function start(id) {
-    let url = 'wss://' + window.location.hostname + '/webssh/ws?id=' + id,
+function start(server_id, token) {
+    let url = 'wss://' + window.location.hostname + '/webssh?ip_address=' + server_id + '&token=' + token,
         sock = new window.WebSocket(url),
         encoding = 'utf-8',
         decoder = window.TextDecoder ? new window.TextDecoder(encoding) : encoding,

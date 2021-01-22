@@ -149,6 +149,8 @@ Route::group(['middleware' => ['auth', 'permissions']], function () {
     Route::post('/user/setting/update', 'UserController@updateSetting')->name(
         'user_setting_update'
     );
+
+    Route::view('/webTerminal/','terminal.index');
 });
 
 Route::any('/upload/{any?}', function () {
